@@ -4,4 +4,5 @@ import { Button } from '@/components/ui/button'
 
 <template>
   <Button>Button</Button>
+  ami k tui ki janosjh
 </template>
