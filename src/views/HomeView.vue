@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import { Button } from '@/components/ui/button'
+</script>
 
 <template>
-  <main>ami k</main>
+  <Button>Button</Button>
 </template>

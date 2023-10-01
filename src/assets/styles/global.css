@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 16, 185, 129;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 245, 158, 11;
+    --warning-foreground: 210 40% 98%;
+
+    --info: 6, 182, 212;
+    --info-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+ 
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+ 
+  .page-min-height {
+    min-height: calc(var(--vh, 1vh) * 100 - 132px);
+  }
+  .CollapsibleContent {
+    overflow: hidden;
+  }
+  .CollapsibleContent[data-state="open"] {
+    animation: slideDown 300ms ease-out;
+  }
+  .CollapsibleContent[data-state="closed"] {
+    animation: slideUp 300ms ease-out;
+  }
+
+  .input-group :not(:first-child) input {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+  .input-group.merged :not(:first-child) input {
+    border-left-width: 0 !important;
+    padding-left: 0px !important;
+  }
+  .input-group :not(:last-child) input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .input-group.merged :not(:last-child) input {
+    border-right: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
